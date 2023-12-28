@@ -1,13 +1,17 @@
-import logo from "./logo.svg";
+import { useReducer } from "react";
 import "./App.css";
 import "./styles.css";
+import { useReducer } from "react";
+
+function reducer(state, action){}
 
 function App() {
+  const [{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
   return (
     <div className="calculator-grid">
       <div className="output">
-        <div className="previous-operand">123456 +</div>
-        <div className="current-operand">123456</div>
+        <div className="previous-operand">{previousOperand} {operation}</div>
+        <div className="current-operand">{currentOperand}</div>
       </div>
       <button className="span-two">AC</button>
       <button>DEL</button>
